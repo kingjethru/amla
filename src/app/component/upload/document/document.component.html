@@ -1,0 +1,66 @@
+<form [formGroup]="formGroup">
+  <mat-card>
+    <mat-card-title class="first"> Document Information </mat-card-title>
+
+    <mat-card-content>
+      <div class="row">
+        <div class="col-md-12">
+          <div class="alert alert-info">
+            <p><strong>Disclaimer:</strong></p>
+            <p>
+              This site is created by MAPFRE Insurance Corporation solely for
+              the submission of insurance claim-related documents. Receipt of
+              claim documents must not be construed as an admission of liability
+              and will be kept in accordance with the acceptable standards to
+              protect confidentiality.
+            </p>
+            <p>
+              Submission of derogative, obscene and inappropriate materials will
+              be dealt with accordingly under exisiting laws, rules, regulations
+              and jurisprudence.
+            </p>
+            <p>
+              Please follow our picture-taking guidelines to avoid delay in
+              processing the claim.
+            </p>
+            <p>
+              MAPFRE Insurance Corporation reserves the right to request for
+              additional document and/or information as needed to complete the
+              review of the claim.
+            </p>
+          </div>
+        </div>
+        <div class="col-md-6">
+          <mat-form-field appearance="fill">
+            <mat-label>Document Type</mat-label>
+            <mat-select formControlName="documentType" required>
+              <mat-option
+                *ngFor="let list of documentIdList"
+                [value]="list.TIP_DOCUM"
+              >
+                {{ list.NOM_DOCUM }}
+              </mat-option>
+            </mat-select>
+          </mat-form-field>
+        </div>
+        <div class="col-md-6">
+          <mat-form-field appearance="fill">
+            <mat-label>Document ID</mat-label>
+            <input
+              formControlName="documentCode"
+              maxlength="20"
+              matInput
+              required
+            />
+          </mat-form-field>
+        </div>
+      </div>
+    </mat-card-content>
+
+    <mat-card-actions align="end">
+      <div>
+        <button mat-raised-button matStepperNext color="primary">Generate OTP</button>
+      </div>
+    </mat-card-actions>
+  </mat-card>
+</form>

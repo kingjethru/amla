@@ -1,1 +1,69 @@
-/* You can add global styles to this file, and also import other style files */
+@import "./styles/vendor/fontawesome/css/all.min.css";
+/* @import "~@angular/material/prebuilt-themes/indigo-pink.css"; */
+
+.mat-typography {
+  font: 400 14px/20px Arial, "Helvetica Neue", sans-serif;
+  line-height: 20px;
+}
+
+/* buttons */
+.btn.btn-primary {
+  background-color: #d81e05 !important;
+}
+
+.container {
+  padding: 50px 0;
+}
+
+.spacer {
+  margin-top: 50px;
+}
+
+table {
+  width: 100%;
+}
+
+/* override material UI */
+.mat-form-field {
+  width: 100%;
+}
+
+.mat-card-title {
+  margin: 30px 0 !important;
+}
+
+.mat-card-title.first {
+  margin-top: 0px !important;
+}
+
+.mat-flat-button.mat-primary,
+.mat-raised-button.mat-primary,
+.mat-fab.mat-primary,
+.mat-mini-fab.mat-primary {
+  background-color: #d81e05;
+}
+
+.mat-raised-button.mat-basic {
+  padding: 8px 20px;
+}
+
+.mat-tooltip {
+  font-size: 16px !important;
+}
+
+h2.swal2-title {
+  font-size: 1.875em !important;
+  font-weight: 600 !important;
+}
+
+@media only screen and (max-width: 767px) {
+  body {
+    font-size: 90% !important;
+  }
+}
+
+@media only screen and (max-width: 500px) {
+  body {
+    font-size: 80% !important;
+  }
+}

@@ -1,0 +1,37 @@
+<form [formGroup]="formGroup">
+    <mat-card>
+      <mat-card-title class="first"> Upload your Identification Card </mat-card-title>
+  
+      <mat-card-content>
+        <div class="row">
+          <div class="col-md-12">
+            <div class="alert alert-info">
+              <p>
+                <strong>Important Reminder:</strong> Please upload your real Identification Card.
+              </p>
+            </div>
+          </div>
+          <div class="col-md-6">
+            <button mat-raised-button color="basic" class="uploadBtn" type="button" (click)="fileInput.click()">
+                Upload ID Photo
+              </button>
+              <input
+                hidden
+                (change)="onFileSelected($event)"
+                #fileInput
+                type="file"
+                accept="image/*"
+              />
+              <div class="file-name">{{ uploadFile?.name }}</div>
+          </div>
+        </div>
+      </mat-card-content>
+  
+      <mat-card-actions align="end">
+        <div>
+          <button mat-raised-button matStepperNext color="primary">Upload</button>
+        </div>
+      </mat-card-actions>
+    </mat-card>
+  </form>
+  
