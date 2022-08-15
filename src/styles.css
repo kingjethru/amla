@@ -56,6 +56,10 @@ h2.swal2-title {
   font-weight: 600 !important;
 }
 
+.alert p:last-of-type {
+  margin-bottom: 0;
+}
+
 @media only screen and (max-width: 767px) {
   body {
     font-size: 90% !important;

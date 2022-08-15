@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
-import { VERSION } from 'src/app/object/app.constant';
+import { VERSION } from 'src/app/objects/app.constant';
 
 @Component({
   selector: 'app-footer',

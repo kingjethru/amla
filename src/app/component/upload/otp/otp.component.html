@@ -24,15 +24,15 @@
           </div>
           <div class="col-md-6">
             <div>
-                <button mat-raised-button color="basic">Resend OTP</button>
+                <button mat-raised-button color="basic" (click)="_resendOTP()">Resend OTP</button>
               </div>
           </div>
         </div>
       </mat-card-content>
   
       <mat-card-actions align="end">
-        <div>
-          <button mat-raised-button matStepperNext color="primary">Verify OTP</button>
+        <div *ngIf="!this.formGroup.invalid">
+          <button mat-raised-button color="primary" (click)="_verifyOTP()">Verify OTP</button>
         </div>
       </mat-card-actions>
     </mat-card>

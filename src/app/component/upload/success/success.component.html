@@ -1,1 +1,26 @@
-<p>success works!</p>
+<form [formGroup]="formGroup">
+  <mat-card>
+    <!-- <mat-card-title class="first">
+      Document Successfully Uploaded
+    </mat-card-title> -->
+
+    <mat-card-content>
+      <div class="row">
+        <div class="col-md-12">
+          <div class="card">
+            <i class="fa fa-circle-check"></i>
+            <h1>Successfully Uploaded</h1>
+            <p>
+              <strong>Congratulations:</strong> You have successfully uploaded
+              your Client ID. Thank you for following our guidelines.
+            </p>
+            <br/>
+            <div>
+              <button mat-raised-button color="primary" (click)="goToHomepage()">Upload New ID</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </mat-card-content>
+  </mat-card>
+</form>

@@ -2,32 +2,34 @@
 
 <div class="container-fluid">
   <div class="container">
-    <mat-stepper [linear]="false" #stepper>
-      <mat-step
-        [stepControl]="documentFG"
-        label="Document">
-        <app-document [formGroup]="documentFG"></app-document>
+    <mat-stepper [linear]="true" #stepper>
+      <mat-step [stepControl]="documentFG" label="Document">
+        <app-document
+          [formGroup]="documentFG"
+          (generateOTP)="generateOTP()"
+        ></app-document>
       </mat-step>
 
-      <mat-step
-        [stepControl]="otpFG"
-        label="OTP">
-        <app-otp [formGroup]="otpFG"></app-otp>
+      <mat-step [stepControl]="otpFG" label="OTP">
+        <app-otp
+          [formGroup]="otpFG"
+          (resendOTP)="resendOTP()"
+          (verifyOTP)="verifyOTP()"
+        ></app-otp>
       </mat-step>
 
-      <mat-step
-        [stepControl]="uploadFG"
-        label="Upload">
-        <app-upload-file [formGroup]="uploadFG"></app-upload-file>
+      <mat-step [stepControl]="uploadFG" label="Upload">
+        <app-upload-file
+          [formGroup]="uploadFG"
+          (selectedFile)="getSelectedFile($event)"
+          (upload)="upload()"
+        ></app-upload-file>
       </mat-step>
 
-      <mat-step
-        [stepControl]="fg"
-        label="Success">
-        <app-upload-file [formGroup]="uploadFG"></app-upload-file>
+      <mat-step [stepControl]="fg" label="Success">
+        <app-success></app-success>
       </mat-step>
     </mat-stepper>
-    
   </div>
 </div>
 

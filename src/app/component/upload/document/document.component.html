@@ -33,7 +33,11 @@
         <div class="col-md-6">
           <mat-form-field appearance="fill">
             <mat-label>Document Type</mat-label>
-            <mat-select formControlName="documentType" required>
+            <mat-select
+              formControlName="documentType"
+              [(ngModel)]="defaultDocumentCode"
+              required
+            >
               <mat-option
                 *ngFor="let list of documentIdList"
                 [value]="list.TIP_DOCUM"
@@ -58,8 +62,10 @@
     </mat-card-content>
 
     <mat-card-actions align="end">
-      <div>
-        <button mat-raised-button matStepperNext color="primary">Generate OTP</button>
+      <div *ngIf="!this.formGroup.invalid">
+        <button mat-raised-button color="primary" (click)="_generateOTP()">
+          Generate OTP
+        </button>
       </div>
     </mat-card-actions>
   </mat-card>
