@@ -27,7 +27,9 @@
       </mat-step>
 
       <mat-step [stepControl]="fg" label="Success">
-        <app-success></app-success>
+        <app-success
+        [formGroup]="fg"
+        ></app-success>
       </mat-step>
     </mat-stepper>
   </div>
