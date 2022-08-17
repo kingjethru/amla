@@ -126,7 +126,8 @@ export class UploadComponent implements OnInit {
   }
 
   upload() {
-    if (this.stepper) {
+    const _this = this;
+    if (_this.stepper) {
       const fd = new FormData();
       if (this.selectedFile != null) {
         fd.append('file', this.selectedFile);
@@ -139,7 +140,7 @@ export class UploadComponent implements OnInit {
         if (result.status) {
           const proceed = result.obj;
           if (proceed) {
-            this.stepper?.next();
+            _this.stepper?.next();
           } else {
             Swal.fire({
               icon: 'warning',
