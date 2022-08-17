@@ -128,7 +128,7 @@ export class UploadComponent implements OnInit {
           } else {
             Swal.fire({
               icon: 'warning',
-              title: 'System Error',
+              title: 'Unable to Upload ID',
               html: result.message,
             });
           }
