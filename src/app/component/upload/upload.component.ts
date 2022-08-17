@@ -37,7 +37,7 @@ export class UploadComponent implements OnInit {
     });
 
     this.uploadFG = this.fb.group({
-      filename: ['', Validators.required],
+      filename: ['', null],
     });
   }
 
