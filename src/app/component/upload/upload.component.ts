@@ -114,6 +114,7 @@ export class UploadComponent implements OnInit {
       }
       fd.append('documentCode', this.documentFG.get('documentCode')?.value);
       fd.append('documentType', this.documentFG.get('documentType')?.value);
+      fd.append('otp', this.otpFG.get('otp')?.value);
 
       this.conn.upload(fd).then((result: ReturnDTO) => {
         if (result.status) {
