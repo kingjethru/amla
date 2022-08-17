@@ -73,7 +73,11 @@ export class UploadComponent implements OnInit {
 
       this.conn.resendOTP(otp).then((result: ReturnDTO) => {
         if (result.status) {
-          this.stepper?.next();
+          Swal.fire({
+            icon: 'error',
+            title: 'Successfully Resend One-Time Password',
+            html: result.message,
+          });
         } else {
           Swal.fire({
             icon: 'error',
