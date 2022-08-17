@@ -98,7 +98,22 @@ export class UploadComponent implements OnInit {
 
       this.conn.verifyOTP(otp).then((result: ReturnDTO) => {
         if (result.status) {
-          this.stepper?.next();
+          const status = result.obj;
+          if (status == '1') {
+            this.stepper?.next();
+          } else if (status == '2') {
+            Swal.fire({
+              icon: 'error',
+              title: 'Invalid OTP',
+              html: result.message,
+            });
+          } else {
+            Swal.fire({
+              icon: 'warning',
+              title: 'Expired OTP',
+              html: result.message,
+            });
+          }
         } else {
           Swal.fire({
             icon: 'error',
