@@ -122,8 +122,16 @@ export class UploadComponent implements OnInit {
 
       this.conn.upload(fd).then((result: ReturnDTO) => {
         if (result.status) {
-          alert(result.obj.get(['proceed']));
-          // this.stepper?.next();
+          const proceed = result.obj;
+          if (proceed) {
+            this.stepper?.next();
+          } else {
+            Swal.fire({
+              icon: 'warning',
+              title: 'System Error',
+              html: result.message,
+            });
+          }
         } else {
           Swal.fire({
             icon: 'error',
