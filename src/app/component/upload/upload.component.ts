@@ -75,7 +75,7 @@ export class UploadComponent implements OnInit {
         if (result.status) {
           Swal.fire({
             icon: 'success',
-            title: 'Successfully Resend One-Time Password',
+            title: 'Successfully Sent One-Time Password',
             html: result.message,
           });
         } else {
@@ -122,7 +122,8 @@ export class UploadComponent implements OnInit {
 
       this.conn.upload(fd).then((result: ReturnDTO) => {
         if (result.status) {
-          this.stepper?.next();
+          alert(result.obj.get(['proceed']));
+          // this.stepper?.next();
         } else {
           Swal.fire({
             icon: 'error',
