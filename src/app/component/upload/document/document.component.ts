@@ -5,27 +5,23 @@ import * as _ from 'lodash';
 @Component({
   selector: 'app-document',
   templateUrl: './document.component.html',
-  styleUrls: ['./document.component.css']
+  styleUrls: ['./document.component.css'],
 })
 export class DocumentComponent implements OnInit {
-
   @Input() formGroup = new FormGroup({});
   @Output() generateOTP: EventEmitter<any> = new EventEmitter();
 
-  constructor() { }
+  constructor() {}
 
   documentIdList: any[] = [
-    {TIP_DOCUM: 'CLI', NOM_DOCUM: 'Client ID'},
-    {TIP_DOCUM: 'TIN', NOM_DOCUM: 'Tax Identification Number'}
+    { TIP_DOCUM: 'CLI', NOM_DOCUM: 'Client ID' },
+    { TIP_DOCUM: 'TIN', NOM_DOCUM: 'Tax Identification Number' },
   ];
   defaultDocumentCode: string = 'CLI';
 
-  ngOnInit(): void {
-    
-  }
+  ngOnInit(): void {}
 
   _generateOTP() {
     this.generateOTP.emit();
   }
-
 }

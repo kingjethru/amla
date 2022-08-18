@@ -5,19 +5,16 @@ import { Utility } from 'src/app/utils/utility';
 @Component({
   selector: 'app-success',
   templateUrl: './success.component.html',
-  styleUrls: ['./success.component.css']
+  styleUrls: ['./success.component.css'],
 })
 export class SuccessComponent implements OnInit {
-
   @Input() formGroup = new FormGroup({});
 
-  constructor() { }
+  constructor() {}
 
-  ngOnInit(): void {
-  }
+  ngOnInit(): void {}
 
   goToHomepage() {
     Utility.goToHomepage();
   }
-
 }

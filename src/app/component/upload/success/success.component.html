@@ -1,9 +1,5 @@
 <form [formGroup]="formGroup">
   <mat-card>
-    <!-- <mat-card-title class="first">
-      Document Successfully Uploaded
-    </mat-card-title> -->
-
     <mat-card-content>
       <div class="row">
         <div class="col-md-12">
@@ -12,11 +8,16 @@
             <h1>Successfully Uploaded</h1>
             <p>
               <strong>Congratulations:</strong> You have successfully uploaded
-              your Client ID. Thank you for following our guidelines.
+              your Identification Card. Thank you for following our guidelines.
             </p>
-            <br/>
+            <br />
             <div>
-              <button mat-raised-button color="primary" (click)="goToHomepage()">Upload New ID</button>
+              <button
+                mat-raised-button
+                color="primary"
+                (click)="goToHomepage()">
+                Upload New ID
+              </button>
             </div>
           </div>
         </div>
