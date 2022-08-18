@@ -51,6 +51,7 @@
           <mat-form-field appearance="fill">
             <mat-label>Document ID</mat-label>
             <input
+              oninput="this.value = this.value.toUpperCase()"
               formControlName="documentCode"
               maxlength="20"
               matInput
