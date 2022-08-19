@@ -22,6 +22,8 @@ import { DocumentComponent } from './component/upload/document/document.componen
 import { OtpComponent } from './component/upload/otp/otp.component';
 import { UploadFileComponent } from './component/upload/upload-file/upload-file.component';
 import { SuccessComponent } from './component/upload/success/success.component';
+import { CustomerCharterComponent } from './component/customer-charter/customer-charter.component';
+import { PrivacyPolicyComponent } from './component/privacy-policy/privacy-policy.component';
 
 @NgModule({
   declarations: [
@@ -33,6 +35,8 @@ import { SuccessComponent } from './component/upload/success/success.component';
     OtpComponent,
     UploadFileComponent,
     SuccessComponent,
+    CustomerCharterComponent,
+    PrivacyPolicyComponent,
   ],
   imports: [
     BrowserModule,
