@@ -1,7 +1,7 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
-import { TestBed } from '@angular/core/testing';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { MatStepper } from '@angular/material/stepper';
+import { CONTACT_EMAIL, CONTACT_GLOBE, CONTACT_HOTLINE, CONTACT_SMART } from 'src/app/objects/app.constant';
 import { OTP } from 'src/app/objects/otp';
 import { ReturnDTO } from 'src/app/objects/return.dto';
 import { ConnectService } from 'src/app/services/connect.service';
@@ -45,6 +45,16 @@ export class UploadComponent implements OnInit {
     this.selectedFile = evt;
   }
 
+  generateErrorMessage(message?: string) {
+    return '<p>' + message + '</p>'
+    + '</ br>'
+    + '<p>Please contact us:</p>'
+    + '<p>Hotline: <strong>'+ CONTACT_HOTLINE +'</strong></p>'
+    + '<p>Smart: <strong>'+ CONTACT_SMART +'</strong></p>'
+    + '<p>Globe: <strong>'+ CONTACT_GLOBE +'</strong></p>'
+    + '<p>Email: <strong>'+ CONTACT_EMAIL +'</strong></p>';
+  }
+
   generateOTP() {
     if (this.stepper) {
       const otp = new OTP();
@@ -58,7 +68,7 @@ export class UploadComponent implements OnInit {
           Swal.fire({
             icon: 'error',
             title: 'System Error',
-            html: result.message,
+            html: this.generateErrorMessage(result.message)
           });
         }
       });
@@ -82,7 +92,7 @@ export class UploadComponent implements OnInit {
           Swal.fire({
             icon: 'error',
             title: 'System Error',
-            html: result.message,
+            html: this.generateErrorMessage(result.message)
           });
         }
       });
@@ -118,7 +128,7 @@ export class UploadComponent implements OnInit {
           Swal.fire({
             icon: 'error',
             title: 'System Error',
-            html: result.message,
+            html: this.generateErrorMessage(result.message)
           });
         }
       });
@@ -152,7 +162,7 @@ export class UploadComponent implements OnInit {
           Swal.fire({
             icon: 'error',
             title: 'System Error',
-            html: result.message,
+            html: this.generateErrorMessage(result.message)
           });
         }
       });

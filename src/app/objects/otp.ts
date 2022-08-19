@@ -3,6 +3,5 @@ export class OTP {
   documentType?: string;
   otp?: string;
 
-  constructor(){};
+  constructor() {}
 }
-

@@ -3,6 +3,5 @@ export class ReturnDTO {
   message?: string;
   obj: any;
 
-  constructor(){};
+  constructor() {}
 }
-

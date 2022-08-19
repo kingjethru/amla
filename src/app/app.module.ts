@@ -32,7 +32,7 @@ import { SuccessComponent } from './component/upload/success/success.component';
     DocumentComponent,
     OtpComponent,
     UploadFileComponent,
-    SuccessComponent
+    SuccessComponent,
   ],
   imports: [
     BrowserModule,
@@ -51,6 +51,6 @@ import { SuccessComponent } from './component/upload/success/success.component';
     ReactiveFormsModule,
   ],
   providers: [],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
 })
-export class AppModule { }
+export class AppModule {}
