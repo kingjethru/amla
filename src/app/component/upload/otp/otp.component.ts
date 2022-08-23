@@ -7,7 +7,7 @@ import { FormGroup } from '@angular/forms';
   styleUrls: ['./otp.component.css'],
 })
 export class OtpComponent implements OnInit {
-  @Input() formGroup = new FormGroup({});
+  @Input() formGroup: FormGroup = new FormGroup({});
   @Output() resendOTP: EventEmitter<any> = new EventEmitter();
   @Output() verifyOTP: EventEmitter<any> = new EventEmitter();
 

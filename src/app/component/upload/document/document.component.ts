@@ -8,14 +8,14 @@ import * as _ from 'lodash';
   styleUrls: ['./document.component.css'],
 })
 export class DocumentComponent implements OnInit {
-  @Input() formGroup = new FormGroup({});
+  @Input() formGroup: FormGroup = new FormGroup({});
   @Output() generateOTP: EventEmitter<any> = new EventEmitter();
 
   constructor() {}
 
   documentIdList: any[] = [
-    { TIP_DOCUM: 'CLI', NOM_DOCUM: 'Client ID' },
-    { TIP_DOCUM: 'TIN', NOM_DOCUM: 'Tax Identification Number' },
+    { TIP_DOCUM: 'CLI', NOM_DOCUM: 'Individual' },
+    { TIP_DOCUM: 'TIN', NOM_DOCUM: 'Corporate' },
   ];
   defaultDocumentCode: string = 'CLI';
 

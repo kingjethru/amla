@@ -7,12 +7,16 @@ import { FormGroup } from '@angular/forms';
   styleUrls: ['./upload-file.component.css'],
 })
 export class UploadFileComponent implements OnInit {
-  @Input() formGroup = new FormGroup({});
+  @Input() formGroup: FormGroup = new FormGroup({});
+  @Input() clientName: string = '';
+  @Input() clientEmail: string = '';
+
   @Output() selectedFile: EventEmitter<any> = new EventEmitter();
   @Output() upload: EventEmitter<any> = new EventEmitter();
 
   constructor() {}
 
+  showIDList: boolean = false;
   hasFile: boolean = false;
 
   uploadFile: any = null;

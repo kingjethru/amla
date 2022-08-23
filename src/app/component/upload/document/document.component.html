@@ -1,6 +1,6 @@
 <form [formGroup]="formGroup">
   <mat-card>
-    <mat-card-title class="first"> Document Information </mat-card-title>
+    <mat-card-title class="first"> Login Information </mat-card-title>
 
     <mat-card-content>
       <div class="row">
@@ -32,7 +32,7 @@
         </div>
         <div class="col-md-6">
           <mat-form-field appearance="fill">
-            <mat-label>Document Type</mat-label>
+            <mat-label>Client Type</mat-label>
             <mat-select
               formControlName="documentType"
               [(ngModel)]="defaultDocumentCode"
@@ -49,7 +49,7 @@
         </div>
         <div class="col-md-6">
           <mat-form-field appearance="fill">
-            <mat-label>Document ID</mat-label>
+            <mat-label>MID</mat-label>
             <input
               oninput="this.value = this.value.toUpperCase()"
               formControlName="documentCode"

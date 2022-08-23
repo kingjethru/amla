@@ -18,6 +18,8 @@ export class UploadComponent implements OnInit {
   @ViewChild('stepper') private stepper?: MatStepper;
 
   selectedFile: any = null;
+  clientName: string = '';
+  clientEmail: string = '';
 
   documentFG: FormGroup = new FormGroup({});
   otpFG: FormGroup = new FormGroup({});
@@ -63,6 +65,9 @@ export class UploadComponent implements OnInit {
 
       this.conn.generateOTP(otp).then((result: ReturnDTO) => {
         if (result.status) {
+          this.clientName = result.obj["clientName"];
+          this.clientEmail = result.obj["clientEmail"];
+          
           this.stepper?.next();
         } else {
           Swal.fire({
@@ -83,6 +88,9 @@ export class UploadComponent implements OnInit {
 
       this.conn.resendOTP(otp).then((result: ReturnDTO) => {
         if (result.status) {
+          this.clientName = result.obj["clientName"];
+          this.clientEmail = result.obj["clientEmail"];
+
           Swal.fire({
             icon: 'success',
             title: 'Successfully Sent One-Time Password',

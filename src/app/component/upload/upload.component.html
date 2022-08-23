@@ -2,15 +2,22 @@
 
 <div class="container-fluid">
   <div class="container">
-    <mat-stepper [linear]="true" #stepper>
-      <mat-step [stepControl]="documentFG" label="Document">
+    <img
+      class="updocs-logo"
+      src="assets/images/mapfre/updocs-logo.png"
+      alt="Updocs"
+      title="Updocs"
+    />
+
+    <mat-stepper [linear]="false" #stepper>
+      <mat-step [stepControl]="documentFG" label="Login">
         <app-document
           [formGroup]="documentFG"
           (generateOTP)="generateOTP()"
         ></app-document>
       </mat-step>
 
-      <mat-step [stepControl]="otpFG" label="OTP">
+      <mat-step [stepControl]="otpFG" label="Verify OTP">
         <app-otp
           [formGroup]="otpFG"
           (resendOTP)="resendOTP()"
@@ -23,13 +30,13 @@
           [formGroup]="uploadFG"
           (selectedFile)="getSelectedFile($event)"
           (upload)="upload()"
+          [clientName]="clientName"
+          [clientEmail]="clientEmail"
         ></app-upload-file>
       </mat-step>
 
       <mat-step [stepControl]="fg" label="Success">
-        <app-success
-        [formGroup]="fg"
-        ></app-success>
+        <app-success [formGroup]="fg"></app-success>
       </mat-step>
     </mat-stepper>
   </div>
