@@ -9,13 +9,12 @@
         <div class="col-md-12">
           <div class="alert alert-info">
             <p>
-              <strong>Important Reminder:</strong> We require clients to submit
-              <strong>1 valid</strong> government issued ID not more than <strong>10MB</strong> in size. 
-              
+              <strong>Important Reminder:</strong> Please upload a clear,
+              readable copy of one <strong>(1) valid government-issued ID</strong>.
             </p>
             <p class="list-id" (click)="showIDList = !showIDList">
-              {{ showIDList ? "Hide" : "Show" }} list of allowed IDs
-              {{showIDList ? '&#171;' : '&#187;'}}
+              {{ showIDList ? "Hide" : "Show" }} List of acceptable IDs
+              {{ showIDList ? "&#171;" : "&#187;" }}
             </p>
             <div class="allowed-id-list" *ngIf="showIDList">
               <ul>
@@ -61,7 +60,11 @@
         </div>
 
         <div class="col-md-12">
-          <p>You are about to upload ID for client <strong>{{clientName}}</strong> with an email of <strong>{{clientEmail}}</strong>.</p>
+          <p>
+            You are about to upload ID for client
+            <strong>{{ clientName }}</strong> with an email of
+            <strong>{{ clientEmail }}</strong>.
+          </p>
         </div>
 
         <div class="col-md-6">
@@ -74,6 +77,10 @@
           >
             Upload ID Photo
           </button>
+          <i
+            class="fa fa-circle-info"
+            matTooltip="Acceptable formats: JPEG, JPG, PNG, PDF, DOC, DOCX not more than 10mb"
+          ></i>
 
           <input
             hidden

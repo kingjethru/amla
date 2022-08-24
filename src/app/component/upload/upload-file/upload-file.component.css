@@ -10,3 +10,10 @@
 .allowed-id-list {
   margin-top: 10px;
 }
+
+.fa.fa-circle-info {
+  font-size: 20px;
+  color: #98d0dd;
+  margin-left: 10px;
+  cursor: pointer;
+}
