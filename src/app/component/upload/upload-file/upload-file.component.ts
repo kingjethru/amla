@@ -1,5 +1,6 @@
 import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 import { FormGroup } from '@angular/forms';
+import Swal from 'sweetalert2';
 
 @Component({
   selector: 'app-upload-file',
@@ -24,9 +25,20 @@ export class UploadFileComponent implements OnInit {
   ngOnInit(): void {}
 
   onFileSelected(event: any): void {
-    this.uploadFile = event.target.files[0] ?? null;
-    this.hasFile = true;
-    this.selectedFile.emit(this.uploadFile);
+    const file = event.target.files[0] ?? null;
+    if (file) {
+      if (file.size > 10000000) {
+        Swal.fire({
+          icon: 'warning',
+          title: 'File Limit Exceeds',
+          html: "File limit is not more than 10MB size"
+        });
+      } else {
+        this.uploadFile = file;
+        this.hasFile = true;
+        this.selectedFile.emit(this.uploadFile);
+      }
+    }
   }
 
   _upload() {

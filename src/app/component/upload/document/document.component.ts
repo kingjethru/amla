@@ -14,8 +14,8 @@ export class DocumentComponent implements OnInit {
   constructor() {}
 
   documentIdList: any[] = [
-    { TIP_DOCUM: 'CLI', NOM_DOCUM: 'Individual' },
-    { TIP_DOCUM: 'TIN', NOM_DOCUM: 'Corporate' },
+    { TIP_DOCUM: 'CLI', NOM_DOCUM: 'INDIVIDUAL' },
+    { TIP_DOCUM: 'TIN', NOM_DOCUM: 'CORPORATE' },
   ];
   defaultDocumentCode: string = 'CLI';
 
