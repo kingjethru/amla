@@ -58,7 +58,7 @@ export class OtpComponent implements OnInit {
           details.documentCode = this.documentFG.get('documentCode')?.value;
           details.documentType = this.documentFG.get('documentType')?.value;
           details.option = 'a';
-          this.conn.notifyUs(details).then((res: ReturnDTO) => {
+          this.conn.emailNotify(details).then((res: ReturnDTO) => {
             if (res.status) {
               this.successNotification();
             } else {
@@ -108,7 +108,7 @@ export class OtpComponent implements OnInit {
         details.email = result.value.email;
         details.option = 'b';
 
-        this.conn.updateEmail(details).then((res: ReturnDTO) => {
+        this.conn.emailNotify(details).then((res: ReturnDTO) => {
           if (res.status) {
             this.successNotification();
           } else {

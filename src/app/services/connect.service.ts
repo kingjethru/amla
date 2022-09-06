@@ -34,15 +34,9 @@ export class ConnectService {
       .then((ReturnDTO) => ReturnDTO as ReturnDTO);
   }
 
-  async notifyUs(emailNotify: EmailNotify): Promise<ReturnDTO> {
+  async emailNotify(emailNotify: EmailNotify): Promise<ReturnDTO> {
     return this.app
-      .post(emailNotify, 'notifyUs')
-      .then((ReturnDTO) => ReturnDTO as ReturnDTO);
-  }
-
-  async updateEmail(emailNotify: EmailNotify): Promise<ReturnDTO> {
-    return this.app
-      .post(emailNotify, 'updateEmail')
+      .post(emailNotify, 'emailNotify')
       .then((ReturnDTO) => ReturnDTO as ReturnDTO);
   }
   
