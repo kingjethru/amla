@@ -9,7 +9,7 @@
             <p>
               <strong>Note:</strong> One-Time Password was sent to
               <strong>{{ clientEmail }}</strong>.
-               Not you, or no longer have access to this email? <a class="notify-us" href="mailto:{{contactEmail}}">Notify Us!</a>
+               Not {{clientName}}, or no longer have access to this email? <a class="notify-us" (click)="notifyUs()">Notify Us!</a>
             </p>
 
             <p>

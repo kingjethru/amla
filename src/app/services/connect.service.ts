@@ -1,4 +1,5 @@
 import { Injectable } from '@angular/core';
+import { EmailNotify } from '../objects/email.notify';
 import { OTP } from '../objects/otp';
 import { ReturnDTO } from '../objects/return.dto';
 import { AppService } from './app.service';
@@ -32,4 +33,17 @@ export class ConnectService {
       .post(data, 'upload')
       .then((ReturnDTO) => ReturnDTO as ReturnDTO);
   }
+
+  async notifyUs(emailNotify: EmailNotify): Promise<ReturnDTO> {
+    return this.app
+      .post(emailNotify, 'notifyUs')
+      .then((ReturnDTO) => ReturnDTO as ReturnDTO);
+  }
+
+  async updateEmail(emailNotify: EmailNotify): Promise<ReturnDTO> {
+    return this.app
+      .post(emailNotify, 'updateEmail')
+      .then((ReturnDTO) => ReturnDTO as ReturnDTO);
+  }
+  
 }

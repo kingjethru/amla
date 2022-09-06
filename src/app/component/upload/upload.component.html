@@ -20,8 +20,11 @@
       <mat-step [stepControl]="otpFG" label="Verify OTP">
         <app-otp
           [formGroup]="otpFG"
+          [documentFG]="documentFG"
           (resendOTP)="resendOTP()"
           (verifyOTP)="verifyOTP()"
+          [clientName]="clientName"
+          [clientEmail]="clientEmail"
         ></app-otp>
       </mat-step>
 
