@@ -1,4 +1,4 @@
-export const VERSION = '1.20220928';
+export const VERSION = '1.20220929';
 export const CONTACT_HOTLINE = '(02) 8876-4400';
 export const CONTACT_SMART = '(+63) 920-918-6242';
 export const CONTACT_GLOBE = '(+63) 917-581-7175';
