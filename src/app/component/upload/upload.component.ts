@@ -18,6 +18,8 @@ export class UploadComponent implements OnInit {
   @ViewChild('stepper') private stepper?: MatStepper;
 
   selectedFile: any = null;
+  selectedKYCFile: any = null;
+
   clientName: string = '';
   clientEmail: string = '';
 
@@ -45,6 +47,10 @@ export class UploadComponent implements OnInit {
 
   getSelectedFile(evt: any) {
     this.selectedFile = evt;
+  }
+
+  getSelectedKYCFile(evt: any) {
+    this.selectedKYCFile = evt;
   }
 
   generateErrorMessage(message?: string) {
@@ -149,6 +155,9 @@ export class UploadComponent implements OnInit {
       const fd = new FormData();
       if (this.selectedFile != null) {
         fd.append('file', this.selectedFile);
+      }
+      if (this.selectedKYCFile != null) {
+        fd.append('file2', this.selectedKYCFile);
       }
       fd.append('documentCode', this.documentFG.get('documentCode')?.value);
       fd.append('documentType', this.documentFG.get('documentType')?.value);

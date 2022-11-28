@@ -61,9 +61,9 @@
 
         <div class="col-md-12">
           <p>
-            You are about to upload ID for client
+            You are about to upload ID/Know-Your-Customer (KYC) for client
             <strong>{{ clientName }}</strong> with email address
-            <strong>{{ clientEmail }}</strong>.
+            <strong>{{ clientEmail }}</strong>. ID Photo is required to proceed.
           </p>
         </div>
 
@@ -91,6 +91,34 @@
           />
           <div class="file-name">{{ uploadFile?.name }}</div>
         </div>
+
+        <div class="col-md-6">
+          <button
+            mat-raised-button
+            color="basic"
+            class="uploadBtn"
+            type="button"
+            (click)="fileInput2.click()"
+          >
+            Upload KYC
+          </button>
+          <i
+            class="fa fa-circle-info"
+            matTooltip="Acceptable formats: JPEG, JPG, PNG, PDF, DOC, DOCX not more than 10mb"
+          ></i>
+
+          <input
+            hidden
+            (change)="onKYCFileSelected($event)"
+            #fileInput2
+            type="file"
+            accept="image/*, application/pdf, .doc, .docx"
+          />
+          <div class="file-name">{{ uploadKYCFile?.name }}</div>
+        </div>
+
+        <div class="clearfix"></div>
+
       </div>
     </mat-card-content>
 

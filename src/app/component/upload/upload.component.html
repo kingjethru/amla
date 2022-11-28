@@ -32,6 +32,7 @@
         <app-upload-file
           [formGroup]="uploadFG"
           (selectedFile)="getSelectedFile($event)"
+          (selectedKYCFile)="getSelectedKYCFile($event)"
           (upload)="upload()"
           [clientName]="clientName"
           [clientEmail]="clientEmail"

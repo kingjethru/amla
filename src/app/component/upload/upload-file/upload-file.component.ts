@@ -13,14 +13,18 @@ export class UploadFileComponent implements OnInit {
   @Input() clientEmail: string = '';
 
   @Output() selectedFile: EventEmitter<any> = new EventEmitter();
+  @Output() selectedKYCFile: EventEmitter<any> = new EventEmitter();
+
   @Output() upload: EventEmitter<any> = new EventEmitter();
 
   constructor() {}
 
   showIDList: boolean = false;
   hasFile: boolean = false;
-
   uploadFile: any = null;
+
+  hasKYCFile: boolean = false;
+  uploadKYCFile: any = null;
 
   ngOnInit(): void {}
 
@@ -37,6 +41,23 @@ export class UploadFileComponent implements OnInit {
         this.uploadFile = file;
         this.hasFile = true;
         this.selectedFile.emit(this.uploadFile);
+      }
+    }
+  }
+
+  onKYCFileSelected(event: any): void {
+    const file = event.target.files[0] ?? null;
+    if (file) {
+      if (file.size > 10000000) {
+        Swal.fire({
+          icon: 'warning',
+          title: 'File Limit Exceeds',
+          html: "File limit is not more than 10MB size"
+        });
+      } else {
+        this.uploadKYCFile = file;
+        this.hasKYCFile = true;
+        this.selectedKYCFile.emit(this.uploadKYCFile);
       }
     }
   }
